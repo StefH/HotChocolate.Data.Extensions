@@ -10,6 +10,17 @@ namespace HotChocolate.Data.Filters.Utils
     /// </summary>
     internal static class MethodFinder
     {
+        public static MethodInfo GetPublicMethodBySignature(
+            Type type,
+            string name,
+            Type returnType,
+            Type? customAttributeType,
+            bool matchParameterInheritence,
+            params Type[] parameterTypes)
+        {
+            return GetPublicMethodsBySignature(type, name, returnType, customAttributeType, matchParameterInheritence, parameterTypes).Single();
+        }
+
         public static IEnumerable<MethodInfo> GetPublicMethodsBySignature(
             Type type,
             string name,

@@ -36,7 +36,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseNotes", "ReleaseNotes", "{A9F73919-89AD-46FB-968B-B8B7F327F93D}"
 	ProjectSection(SolutionItems) = preProject
 		Generate-ReleaseNotes.bat = Generate-ReleaseNotes.bat
-		PackageReadme.md = PackageReadme.md
 		PackageReleaseNotes.template = PackageReleaseNotes.template
 		PackageReleaseNotes.txt = PackageReleaseNotes.txt
 		ReleaseNotes.md = ReleaseNotes.md

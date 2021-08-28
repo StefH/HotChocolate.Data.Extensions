@@ -16,4 +16,8 @@
       <ProjectReference Include="..\HotChocolate.Data.Filters.Extensions\HotChocolate.Data.Filters.Extensions.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="PackageReadme.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
 </Project>

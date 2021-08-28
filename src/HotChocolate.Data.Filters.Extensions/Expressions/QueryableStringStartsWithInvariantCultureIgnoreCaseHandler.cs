@@ -4,13 +4,13 @@ using HotChocolate.Types;
 
 namespace HotChocolate.Data.Filters.Expressions
 {
-    internal class QueryableStringContainsInvariantCultureIgnoreCaseHandler : ExtendedQueryableStringOperationHandler
+    internal class QueryableStringStartsWithInvariantCultureIgnoreCaseHandler : ExtendedQueryableStringOperationHandler
     {
         protected override int Operation { get; }
 
-        public QueryableStringContainsInvariantCultureIgnoreCaseHandler(ExtendedFilterOperations operations, InputParser inputParser) : base(inputParser)
+        public QueryableStringStartsWithInvariantCultureIgnoreCaseHandler(ExtendedFilterOperations operations, InputParser inputParser) : base(inputParser)
         {
-            Operation = operations.StringContainsIgnoreCase;
+            Operation = operations.StringStartsWithIgnoreCase;
         }
 
         public override Expression HandleOperation(
