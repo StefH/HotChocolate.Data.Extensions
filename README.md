@@ -1,6 +1,10 @@
 # HotChocolate.Data.Extensions
 
-Contains some extra String filters like eqIgnoreCase and containsIgnoreCase.
+Contains some extra String filters like:
+- eqIgnoreCase
+- containsIgnoreCase
+- endsWithIgnoreCase
+- startsWithIgnoreCase
 
 ## NuGet packages
 
@@ -18,7 +22,7 @@ Contains some extra String filters like eqIgnoreCase and containsIgnoreCase.
 
     // ...
            
-    // Add filtering and sorting capabilities.
+        // Add filtering and sorting capabilities.
         .AddExtendedFiltering() // 👈 Instead of .AddFiltering()
 
     // ...
