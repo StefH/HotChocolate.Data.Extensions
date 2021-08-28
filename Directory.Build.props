@@ -4,7 +4,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
         <Nullable>enable</Nullable>
 
@@ -15,7 +15,7 @@
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
         <PackageProjectUrl>https://github.com/StefH/HotChocolate.Data.Extensions</PackageProjectUrl>
-        <PackageIconUrl>https://chillicream.com/resources/hotchocolate-signet.png</PackageIconUrl>
+        <PackageIcon>icon_200x200.png</PackageIcon>
 
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/StefH/HotChocolate.Data.Extensions</RepositoryUrl>
@@ -26,6 +26,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="../../resources/icon_200x200.png" Pack="true" PackagePath="" />
         <None Include="../../PackageReadme.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 </Project>
