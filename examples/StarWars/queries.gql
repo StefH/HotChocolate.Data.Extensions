@@ -1,0 +1,94 @@
+query GetCharactersWithPaging1(
+  $take: Int
+  $skip: Int
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: { or: [{ id: { lte: 1002 } }, { name: { containsIgnoreCase: "c" } }] }
+    order: $order
+  ) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetCharactersWithPaging2(
+  $take: Int
+  $skip: Int
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: { name: { eqIgnoreCase: "c-3PO" } } # 👈 instead of eq
+    order: $order
+  ) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetCharactersWithPaging3(
+  $take: Int
+  $skip: Int
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: { name: { startsWithIgnoreCase: "c" } }
+    order: $order
+  ) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetCharactersWithPaging4(
+  $take: Int
+  $skip: Int
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: { name: { endsWithIgnoreCase: "o" } }
+    order: $order
+  ) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+fragment c on Character {
+  id
+  name
+  height
+  appearsIn
+}

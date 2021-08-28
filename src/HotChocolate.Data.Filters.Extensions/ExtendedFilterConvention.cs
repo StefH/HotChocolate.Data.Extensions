@@ -32,6 +32,16 @@ namespace HotChocolate.Data.Filters
                 descriptor.Operation(_operations.StringEqualsIgnoreCase).Name("eqIgnoreCase").Description("string.Equals with InvariantCultureIgnoreCase");
             }
 
+            if (!_configuration.OverwriteStringEndsWith)
+            {
+                descriptor.Operation(_operations.StringEndsWithIgnoreCase).Name("endsWithIgnoreCase").Description("string.EndsWith with InvariantCultureIgnoreCase");
+            }
+
+            if (!_configuration.OverwriteStringStartsWith)
+            {
+                descriptor.Operation(_operations.StringStartsWithIgnoreCase).Name("startsWithIgnoreCase").Description("string.StartsWith with InvariantCultureIgnoreCase");
+            }
+
             descriptor.Configure<StringOperationFilterInputType>(filterInputTypeDescriptor =>
             {
                 // Type<StringType> is required:
@@ -46,16 +56,9 @@ namespace HotChocolate.Data.Filters
                  * containsIgnoreCase: String
                  */
                 filterInputTypeDescriptor.Operation(_operations.StringContainsIgnoreCase).Type<StringType>();
-
-                /*
-                 * Generates:
-                 * 
-                 * """
-                 * string.Equals with InvariantCultureIgnoreCase
-                 * """
-                 * eqIgnoreCase: String
-                 */
                 filterInputTypeDescriptor.Operation(_operations.StringEqualsIgnoreCase).Type<StringType>();
+                filterInputTypeDescriptor.Operation(_operations.StringEndsWithIgnoreCase).Type<StringType>();
+                filterInputTypeDescriptor.Operation(_operations.StringStartsWithIgnoreCase).Type<StringType>();
             });
 
             descriptor.Provider(new QueryableFilterProvider(configure => configure
@@ -63,6 +66,8 @@ namespace HotChocolate.Data.Filters
 
                 .AddFieldHandler<QueryableStringContainsInvariantCultureIgnoreCaseHandler>()
                 .AddFieldHandler<QueryableStringEqualsInvariantCultureIgnoreCaseEqualsHandler>()
+                .AddFieldHandler<QueryableStringEndsWithInvariantCultureIgnoreCaseHandler>()
+                .AddFieldHandler<QueryableStringStartsWithInvariantCultureIgnoreCaseHandler>()
             ));
         }
     }
