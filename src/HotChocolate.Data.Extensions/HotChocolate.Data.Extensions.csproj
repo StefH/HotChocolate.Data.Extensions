@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+        <LangVersion>9</LangVersion>
+
+        <RootNamespace>HotChocolate.Data.Extensions</RootNamespace>
+        <Title>HotChocolate.Data.Extensions</Title>
+
+        <PackageId>HotChocolate.Data.Extensions</PackageId>
+        <PackageTags>GraphQL Data Extensions Filter Filters</PackageTags>
+        <Description>Some extensions to HotChocolate.Data</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HotChocolate.Data.Filters.Extensions\HotChocolate.Data.Filters.Extensions.csproj" />
+    </ItemGroup>
+
+</Project>

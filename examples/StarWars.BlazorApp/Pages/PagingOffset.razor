@@ -1,0 +1,89 @@
+@page "/charactersPagingOffset"
+
+@inject IStarWarsGeneratedClient Client;
+
+<h1>Characters (with offset based paging)</h1>
+
+@if (characters == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Episodes</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var character in characters)
+			{
+				<tr>
+					<td>@character.Id</td>
+					<td>@character.Name</td>
+					<td>@string.Join(", ", @character.AppearsIn)</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+	<div>Total = @total</div>
+	<span disabled="@(!pageInfo.HasPreviousPage)" @onclick="@ClickPrevious" style="text-underline-position: under;cursor: pointer;color: blue;" class="oi oi-arrow-left"></span>
+	for (int pageIndex = 1; pageIndex <= Convert.ToInt32(Math.Ceiling(total / Convert.ToDecimal(pageSize))); pageIndex++)
+	{
+		var handlePageArgument = pageIndex;
+		<span style="text-underline-position: under;cursor: pointer;color: blue;" @onclick="(() => HandleChangePage(handlePageArgument))"><span style="margin-left: 5px;margin-right: 5px;">@pageIndex</span></span>
+	}
+	<span disabled="@(!pageInfo.HasNextPage)" @onclick="@ClickNext" style="text-underline-position: under;cursor: pointer;color: blue;" class="oi oi-arrow-right"></span>
+}
+
+@code {
+	private int pageSize = 2;
+	private int currentPage = 1;
+
+	private IReadOnlyList<IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items> characters;
+	private IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo pageInfo;
+	private int total = 0;
+
+	protected override async Task OnInitializedAsync()
+	{
+		await GoToPage(1);
+	}
+
+	async Task ClickNext()
+	{
+		if (pageInfo.HasNextPage)
+		{
+			await GoToPage(currentPage + 1);
+		}
+	}
+
+	async Task ClickPrevious()
+	{
+		if (pageInfo.HasPreviousPage)
+		{
+			await GoToPage(currentPage - 1);
+		}
+	}
+
+	async Task HandleChangePage(int page)
+	{
+		await GoToPage(page);
+	}
+
+	private async Task GoToPage(int page)
+	{
+		var skip = (page - 1) * pageSize;
+
+		var operationResult = await Client.GetCharactersWithPaging.ExecuteAsync(pageSize, skip, null, null);
+
+		var result = operationResult.Data.CharactersWithPagingFilteringAndSorting;
+		characters = result.Items;
+		pageInfo = result.PageInfo;
+		total = result.TotalCount;
+
+		currentPage = page;
+	}
+}

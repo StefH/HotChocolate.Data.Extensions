@@ -1,0 +1,43 @@
+@page "/"
+
+@inject IStarWarsGeneratedClient Client;
+
+<h1>Characters</h1>
+
+@if (characters == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Episodes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var character in characters)
+            {
+                <tr>
+                    <td>@character.Id</td>
+                    <td>@character.Name</td>
+                    <td>@string.Join(", ", @character.AppearsIn)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IReadOnlyList<IGetAllCharacters_Characters> characters;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var operationResult = await Client.GetAllCharacters.ExecuteAsync();
+
+        characters = operationResult.Data.Characters;
+    }
+}

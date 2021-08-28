@@ -1,0 +1,104 @@
+fragment characterWithIdAndName on Character {
+  id
+  name
+}
+
+query getHero($episode: Episode!) {
+  hero(episode: $episode) {
+    id
+    name
+    friends {
+      edges {
+        node {
+          ...characterWithIdAndName
+        }
+      }
+    }
+  }
+}
+
+mutation createReview($review: CreateReviewInput!) {
+  createReview(input: $review) {
+    review {
+      commentary
+      stars
+    }
+  }
+}
+
+query getCharactersByIds($ids: [Int!]!){
+  charactersByIds(ids: $ids) {
+    ...c
+  }
+}
+
+query GetAllCharacters {
+  characters {
+    ...c
+  }
+}
+
+query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $after: String) {
+  charactersWithCursorPagingFilteringAndSorting (first: $first, last: $last, before: $before, after: $after) {
+    nodes {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetCharactersWithPaging(
+  $take: Int!
+  $skip: Int
+  $where: ICharacterFilterInput
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: $where
+    order: $order
+  ) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetAllHumansAndDroids {
+  characters {
+    ...d
+    ...h
+  }
+}
+
+fragment h on Human {
+  id
+  name
+  appearsIn
+}
+
+fragment d on Droid {
+  id
+  name
+  appearsIn
+  primaryFunction
+}
+
+fragment c on Character {
+  id
+  name
+  height
+  appearsIn
+}

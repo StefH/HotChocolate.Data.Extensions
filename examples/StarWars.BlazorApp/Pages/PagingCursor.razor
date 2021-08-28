@@ -1,0 +1,79 @@
+﻿@page "/charactersPagingCursor"
+
+@inject IStarWarsGeneratedClient Client;
+
+<h1>Characters (with cursor based paging)</h1>
+
+@if (characters == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Episodes</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var character in characters)
+            {
+                <tr>
+                    <td>@character.Id</td>
+                    <td>@character.Name</td>
+                    <td>@string.Join(", ", @character.AppearsIn)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>Total = @total</div>
+    <button disabled="@(!pageInfo.HasPreviousPage)" type="button" @onclick="@ClickPrevious">⬅️</button>
+    <button disabled="@(!pageInfo.HasNextPage)" type="button" @onclick="@ClickNext">➡️</button>
+}
+
+@code {
+    private int pageSize = 2;
+
+    private IReadOnlyList<IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes> characters;
+    private IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo pageInfo;
+    private int total = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Update(pageSize, null, null, null);
+    }
+
+    async Task ClickNext()
+    {
+        if (pageInfo.HasNextPage)
+        {
+            await Update(pageSize, null, null, pageInfo.EndCursor);
+        }
+    }
+
+    async Task ClickPrevious()
+    {
+        if (pageInfo.HasPreviousPage)
+        {
+            await Update(null, pageSize, pageInfo.StartCursor, null);
+        }
+    }
+
+    void HandleChangePage(int p)
+    {
+    }
+
+    // https://www.pdftron.com/blog/graphql/implementing-graphql-pagination/
+    private async Task Update(int? first, int? last, string before, string after)
+    {
+        var operationResult = await Client.GetCharactersWithCursorPaging.ExecuteAsync(first, last, before, after);
+
+        var x = operationResult.Data.CharactersWithCursorPagingFilteringAndSorting;
+        characters = x.Nodes;
+        pageInfo = x.PageInfo;
+        total = x.TotalCount;
+    }
+}

@@ -1,0 +1,36 @@
+@page "/blazoriseDataGrid"
+
+@inject IStarWarsGeneratedClient Client;
+
+@using Character = StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items;
+
+<h1>Characters (Blazorise DataGrid)</h1>
+
+<DataGrid TItem="Character"
+		  Data="@characters"
+		  ReadData="@OnReadData"
+		  Filterable="true"
+		  FilterMethod="DataGridFilterMethod.Contains"
+		  Sortable="true"
+		  ShowPager="true"
+		  TotalItems="@total"
+		  PageSizes="@(new[] { 2, 3, 5, 10 })"
+		  ShowPageSizes="true">
+
+	<ChildContent>
+		<DataGridNumericColumn TItem="Character" Field="@nameof(Character.Id)" Caption="Id" />
+		<DataGridColumn TItem="Character" Field="@nameof(Character.Name)" Caption="Name" />
+		<DataGridNumericColumn TItem="Character" Field="@nameof(Character.Height)" Caption="Height" />
+		<DataGridColumn TItem="Character" Field="@nameof(Character.AppearsIn)" Caption="Episodes" Filterable="false" Sortable="false">
+			<DisplayTemplate>
+				@(string.Join(", ", context.AppearsIn))
+			</DisplayTemplate>
+		</DataGridColumn>
+	</ChildContent>
+
+	<EmptyTemplate>
+		<div class="box">
+			No characters are found!
+		</div>
+	</EmptyTemplate>
+</DataGrid>

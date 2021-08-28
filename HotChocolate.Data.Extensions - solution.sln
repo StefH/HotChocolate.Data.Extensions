@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4AC317F-138E-4955-BD6A-8F7FE37EE52F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{6819F19A-CEC7-4B84-87FC-2944DB5A580D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{E7126E6E-3282-456E-9FAA-C335B5F3EA66}"
+	ProjectSection(SolutionItems) = preProject
+		examples\StarWars.BlazorApp\StarWars.BlazorApp.csproj = examples\StarWars.BlazorApp\StarWars.BlazorApp.csproj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CDA9510C-CE40-4533-858A-0BC3A5245A01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{4AA50138-208E-43B4-8A77-AA4FC0F36000}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.Data.Filters.Extensions", "src\HotChocolate.Data.Filters.Extensions\HotChocolate.Data.Filters.Extensions.csproj", "{26351237-8299-476A-8051-D3C3F3125F45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars.ExtraGraphQL", "examples\StarWars.ExtraGraphQL\StarWars.ExtraGraphQL.csproj", "{D224FBE3-17A2-44F6-801B-AF80DD304414}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars", "examples\StarWars\StarWars.csproj", "{05E75D2E-B85A-4F85-9995-EB3E74BF6477}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWarsGeneratedClient", "examples\StarWarsGeneratedClient\StarWarsGeneratedClient.csproj", "{2A799DEA-2E37-42DB-AECE-CF853039B595}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "graphql-console", "examples\graphql-console\graphql-console.csproj", "{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.Data.Extensions", "src\HotChocolate.Data.Extensions\HotChocolate.Data.Extensions.csproj", "{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseNotes", "ReleaseNotes", "{A9F73919-89AD-46FB-968B-B8B7F327F93D}"
+	ProjectSection(SolutionItems) = preProject
+		Generate-ReleaseNotes.bat = Generate-ReleaseNotes.bat
+		PackageReadme.md = PackageReadme.md
+		PackageReleaseNotes.template = PackageReleaseNotes.template
+		PackageReleaseNotes.txt = PackageReleaseNotes.txt
+		ReleaseNotes.md = ReleaseNotes.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{F78CDC9A-900D-4292-8D6E-CA4D1A993845}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\azure-pipelines-nuget.yml = deployment\azure-pipelines-nuget.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26351237-8299-476A-8051-D3C3F3125F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26351237-8299-476A-8051-D3C3F3125F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26351237-8299-476A-8051-D3C3F3125F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26351237-8299-476A-8051-D3C3F3125F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D224FBE3-17A2-44F6-801B-AF80DD304414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D224FBE3-17A2-44F6-801B-AF80DD304414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D224FBE3-17A2-44F6-801B-AF80DD304414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D224FBE3-17A2-44F6-801B-AF80DD304414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E75D2E-B85A-4F85-9995-EB3E74BF6477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E75D2E-B85A-4F85-9995-EB3E74BF6477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E75D2E-B85A-4F85-9995-EB3E74BF6477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E75D2E-B85A-4F85-9995-EB3E74BF6477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A799DEA-2E37-42DB-AECE-CF853039B595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A799DEA-2E37-42DB-AECE-CF853039B595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A799DEA-2E37-42DB-AECE-CF853039B595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A799DEA-2E37-42DB-AECE-CF853039B595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6819F19A-CEC7-4B84-87FC-2944DB5A580D} = {4AA50138-208E-43B4-8A77-AA4FC0F36000}
+		{E7126E6E-3282-456E-9FAA-C335B5F3EA66} = {4AA50138-208E-43B4-8A77-AA4FC0F36000}
+		{26351237-8299-476A-8051-D3C3F3125F45} = {CDA9510C-CE40-4533-858A-0BC3A5245A01}
+		{D224FBE3-17A2-44F6-801B-AF80DD304414} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
+		{05E75D2E-B85A-4F85-9995-EB3E74BF6477} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
+		{2A799DEA-2E37-42DB-AECE-CF853039B595} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
+		{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
+		{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB} = {CDA9510C-CE40-4533-858A-0BC3A5245A01}
+		{A9F73919-89AD-46FB-968B-B8B7F327F93D} = {A4AC317F-138E-4955-BD6A-8F7FE37EE52F}
+		{F78CDC9A-900D-4292-8D6E-CA4D1A993845} = {A4AC317F-138E-4955-BD6A-8F7FE37EE52F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2928E532-3E28-4E12-BA0D-2366F7CD9B86}
+	EndGlobalSection
+EndGlobal
