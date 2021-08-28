@@ -1,3 +1,4 @@
-#  ()
+# 0.1.2 (28 August 2021)
+- #1 Add EndsWith and StartsWith [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/https://github.com/StefH/HotChocolate.Data.Extensions/blob/main/ReleaseNotes.md
