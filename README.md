@@ -1,10 +1,12 @@
-# HotChocolate.Data.Filters.Extensions
+# HotChocolate.Data.Extensions
+
 Contains some extra String filters like eqIgnoreCase and containsIgnoreCase.
 
 ## NuGet packages
+
 | NuGet | Info |
 | - | - |
-| [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined Nuget
+| [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined NuGet
 | [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Filters.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Filters.Extensions) | Contains only extensions for Filters
 
 ## Usage "HotChocolate.Data.Filters.Extensions"
@@ -17,7 +19,7 @@ Contains some extra String filters like eqIgnoreCase and containsIgnoreCase.
     // ...
            
     // Add filtering and sorting capabilities.
-    .AddExtendedFiltering() // 👈 Instead of .AddFiltering()
+        .AddExtendedFiltering() // 👈 Instead of .AddFiltering()
 
     // ...
 ```
