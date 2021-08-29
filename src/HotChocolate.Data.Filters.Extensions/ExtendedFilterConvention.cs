@@ -1,18 +1,15 @@
 using HotChocolate.Data.Filters.Expressions;
-using HotChocolate.Data.Filters.Models;
 using HotChocolate.Types;
 
 namespace HotChocolate.Data.Filters
 {
     internal class ExtendedFilterConvention : FilterConvention
     {
-        private readonly ExtendedFilterConfiguration _configuration;
-        private readonly ExtendedFilterOperations _operations;
+        private readonly ExtendedFilterOperationHelper _operationHelper;
 
-        public ExtendedFilterConvention(ExtendedFilterConfiguration configuration, ExtendedFilterOperations operations)
+        public ExtendedFilterConvention(ExtendedFilterOperationHelper operationHelper)
         {
-            _configuration = configuration;
-            _operations = operations;
+            _operationHelper = operationHelper;
         }
 
         protected override void Configure(IFilterConventionDescriptor descriptor)
@@ -20,26 +17,11 @@ namespace HotChocolate.Data.Filters
             descriptor.AddDefaults();
 
             // Operation is required:
-            // `Operation with identifier 2000 has no name defined. Add a name to the filter convention (HotChocolate.Data.Filters.StringOperationFilterInputType)`
+            // `Operation with identifier 2000000 has no name defined. Add a name to the filter convention (HotChocolate.Data.Filters.StringOperationFilterInputType)`
 
-            if (!_configuration.OverwriteStringContains)
+            foreach (var operationDetail in _operationHelper.Operations)
             {
-                descriptor.Operation(_operations.StringContainsIgnoreCase).Name("containsIgnoreCase").Description("string.Contains with InvariantCultureIgnoreCase");
-            }
-
-            if (!_configuration.OverwriteStringEquals)
-            {
-                descriptor.Operation(_operations.StringEqualsIgnoreCase).Name("eqIgnoreCase").Description("string.Equals with InvariantCultureIgnoreCase");
-            }
-
-            if (!_configuration.OverwriteStringEndsWith)
-            {
-                descriptor.Operation(_operations.StringEndsWithIgnoreCase).Name("endsWithIgnoreCase").Description("string.EndsWith with InvariantCultureIgnoreCase");
-            }
-
-            if (!_configuration.OverwriteStringStartsWith)
-            {
-                descriptor.Operation(_operations.StringStartsWithIgnoreCase).Name("startsWithIgnoreCase").Description("string.StartsWith with InvariantCultureIgnoreCase");
+                descriptor.Operation(operationDetail.Value.Id).Name(operationDetail.Value.Name);
             }
 
             descriptor.Configure<StringOperationFilterInputType>(filterInputTypeDescriptor =>
@@ -55,19 +37,16 @@ namespace HotChocolate.Data.Filters
                  * """
                  * containsIgnoreCase: String
                  */
-                filterInputTypeDescriptor.Operation(_operations.StringContainsIgnoreCase).Type<StringType>();
-                filterInputTypeDescriptor.Operation(_operations.StringEqualsIgnoreCase).Type<StringType>();
-                filterInputTypeDescriptor.Operation(_operations.StringEndsWithIgnoreCase).Type<StringType>();
-                filterInputTypeDescriptor.Operation(_operations.StringStartsWithIgnoreCase).Type<StringType>();
+                foreach (var operation in _operationHelper.Operations)
+                {
+                    filterInputTypeDescriptor.Operation(operation.Value.Id).Type<StringType>();
+                }
             });
 
             descriptor.Provider(new QueryableFilterProvider(configure => configure
                 .AddDefaultFieldHandlers()
 
-                .AddFieldHandler<QueryableStringContainsInvariantCultureIgnoreCaseHandler>()
-                .AddFieldHandler<QueryableStringEqualsInvariantCultureIgnoreCaseEqualsHandler>()
-                .AddFieldHandler<QueryableStringEndsWithInvariantCultureIgnoreCaseHandler>()
-                .AddFieldHandler<QueryableStringStartsWithInvariantCultureIgnoreCaseHandler>()
+                .AddFieldHandler<ExtendedQueryableStringOperationHandler>()
             ));
         }
     }

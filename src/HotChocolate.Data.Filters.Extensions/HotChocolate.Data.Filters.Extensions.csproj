@@ -13,11 +13,18 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="Expressions\QueryableStringContainsInvariantCultureIgnoreCaseHandler.cs" />
+      <Compile Remove="Expressions\QueryableStringEndsWithInvariantCultureIgnoreCaseHandler.cs" />
+      <Compile Remove="Expressions\QueryableStringEqualsInvariantCultureIgnoreCaseEqualsHandler.cs" />
+      <Compile Remove="Expressions\QueryableStringStartsWithInvariantCultureIgnoreCaseHandler.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="HotChocolate.Data" Version="12.0.0-preview.34" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="PackageReadme.md" Pack="true" PackagePath=""/>
+        <None Include="PackageReadme.md" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
