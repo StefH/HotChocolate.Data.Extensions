@@ -1,10 +1,10 @@
 # HotChocolate.Data.Extensions
 
 Contains some extra String filters like:
-- eqIgnoreCase
-- containsIgnoreCase
-- endsWithIgnoreCase
-- startsWithIgnoreCase
+- eqIgnoreCase / neqIgnoreCase
+- containsIgnoreCase / ncontainsIgnoreCase
+- endsWithIgnoreCase / nendsWithIgnoreCase
+- startsWithIgnoreCase / nstartsWithIgnoreCase
 
 ## NuGet packages
 
