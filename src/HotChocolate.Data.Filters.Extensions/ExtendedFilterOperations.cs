@@ -1,28 +1,27 @@
+using System.Collections.Generic;
 using HotChocolate.Data.Filters.Models;
+using OD = HotChocolate.Data.Filters.Models.ExtendedOperationDetail;
+using FO = HotChocolate.Data.Filters.Enums.ExtendedFilterOperations;
 
 namespace HotChocolate.Data.Filters
 {
-    internal class ExtendedFilterOperations
+    internal class ExtendedFilterOperationHelper
     {
-        public const int _stringContainsIgnoreCase = 2000;
-        public const int _stringEqualsIgnoreCase = 2001;
-        public const int _stringEndWithsIgnoreCase = 2002;
-        public const int _stringStartsWithIgnoreCase = 2003;
+        public IDictionary<FO, ExtendedOperationDetail> Operations = new Dictionary<FO, ExtendedOperationDetail>();
 
-        public int StringEqualsIgnoreCase { get; }
-
-        public int StringContainsIgnoreCase { get; }
-
-        public int StringEndsWithIgnoreCase { get; }
-
-        public int StringStartsWithIgnoreCase { get; }
-
-        public ExtendedFilterOperations(ExtendedFilterConfiguration configuration)
+        public ExtendedFilterOperationHelper(ExtendedFilterConfiguration cfg)
         {
-            StringContainsIgnoreCase = configuration.OverwriteStringContains ? DefaultFilterOperations.Contains : _stringContainsIgnoreCase;
-            StringEqualsIgnoreCase = configuration.OverwriteStringEquals ? DefaultFilterOperations.Equals : _stringEqualsIgnoreCase;
-            StringEndsWithIgnoreCase = configuration.OverwriteStringEndsWith ? DefaultFilterOperations.EndsWith : _stringEndWithsIgnoreCase;
-            StringStartsWithIgnoreCase = configuration.OverwriteStringStartsWith ? DefaultFilterOperations.StartsWith : _stringStartsWithIgnoreCase;
+            Operations.Add(FO.StringContainsIgnoreCase, new OD { Key = FO.StringContainsIgnoreCase, Name = "containsIgnoreCase", Overwrite = cfg.OverwriteStringContains });
+            Operations.Add(FO.StringNotContainsIgnoreCase, new OD { Key = FO.StringNotContainsIgnoreCase, Name = "ncontainsIgnoreCase", Overwrite = cfg.OverwriteStringNotContains });
+
+            Operations.Add(FO.StringEqualsIgnoreCase, new OD { Key = FO.StringEqualsIgnoreCase, Name = "eqIgnoreCase", Overwrite = cfg.OverwriteStringEquals });
+            Operations.Add(FO.StringNotEqualsIgnoreCase, new OD { Key = FO.StringNotEqualsIgnoreCase, Name = "neqIgnoreCase", Overwrite = cfg.OverwriteStringNotEquals });
+
+            Operations.Add(FO.StringEndsWithIgnoreCase, new OD { Key = FO.StringEndsWithIgnoreCase, Name = "endsWithIgnoreCase", Overwrite = cfg.OverwriteStringEndsWith });
+            Operations.Add(FO.StringNotEndsWithIgnoreCase, new OD { Key = FO.StringNotEndsWithIgnoreCase, Name = "nendsWithIgnoreCase", Overwrite = cfg.OverwriteStringNotEndsWith });
+
+            Operations.Add(FO.StringStartsWithIgnoreCase, new OD { Key = FO.StringStartsWithIgnoreCase, Name = "startsWithIgnoreCase", Overwrite = cfg.OverwriteStringStartsWith });
+            Operations.Add(FO.StringNotStartsWithIgnoreCase, new OD { Key = FO.StringNotStartsWithIgnoreCase, Name = "nstartsWithIgnoreCase", Overwrite = cfg.OverwriteStringNotStartsWith });
         }
     }
 }

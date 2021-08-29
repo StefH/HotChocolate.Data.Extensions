@@ -1,5 +1,6 @@
 using System;
 using HotChocolate.Data.Filters;
+using HotChocolate.Data.Filters.Expressions;
 using HotChocolate.Data.Filters.Models;
 using HotChocolate.Execution.Configuration;
 
@@ -16,7 +17,8 @@ namespace Microsoft.Extensions.DependencyInjection
             }
 
             builder.Services.AddSingleton<ExtendedFilterConfiguration>();
-            builder.Services.AddSingleton<ExtendedFilterOperations>();
+            builder.Services.AddSingleton<ExtendedFilterExpressionHelper>();
+            builder.Services.AddSingleton<ExtendedFilterOperationHelper>();
 
             return builder.AddFiltering<ExtendedFilterConvention>();
         }
