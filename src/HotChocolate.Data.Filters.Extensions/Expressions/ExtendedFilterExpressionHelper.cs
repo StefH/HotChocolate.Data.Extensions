@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using HotChocolate.Data.Filters.Utils;
-using FO = HotChocolate.Data.Filters.Enums.ExtendedFilterOperations;
+using FO = HotChocolate.Data.Filters.Enums.ExtendedFilterOperation;
 
 namespace HotChocolate.Data.Filters.Expressions
 {

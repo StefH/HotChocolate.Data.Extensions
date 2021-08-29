@@ -1,6 +1,7 @@
 namespace HotChocolate.Data.Filters.Enums
 {
-    internal enum ExtendedFilterOperations
+    internal enum ExtendedFilterOperation
+
     {
         StringEqualsIgnoreCase = 2000000,
         StringNotEqualsIgnoreCase = 2000001,

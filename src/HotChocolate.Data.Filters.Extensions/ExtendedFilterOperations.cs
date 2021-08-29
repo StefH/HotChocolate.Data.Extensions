@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using HotChocolate.Data.Filters.Models;
 using OD = HotChocolate.Data.Filters.Models.ExtendedOperationDetail;
-using FO = HotChocolate.Data.Filters.Enums.ExtendedFilterOperations;
+using FO = HotChocolate.Data.Filters.Enums.ExtendedFilterOperation;
 
 namespace HotChocolate.Data.Filters
 {

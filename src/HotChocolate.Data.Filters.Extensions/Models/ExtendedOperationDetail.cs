@@ -4,7 +4,7 @@ namespace HotChocolate.Data.Filters.Models
 {
     internal struct ExtendedOperationDetail
     {
-        public ExtendedFilterOperations Key { get; set; }
+        public ExtendedFilterOperation Key { get; set; }
 
         public int Id => (int)Key;
 
