@@ -1,4 +1,4 @@
-# 0.2.0 (29 August 2021)
-- #2 Implement neqIgnoreCase, ncontainsIgnoreCase, nendsWithIgnoreCase and nstartsWithIgnoreCase [enhancement]
+# 0.3.0 (30 August 2021)
+- #3 HotChocolate version 12.0.0-rc.0 [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/https://github.com/StefH/HotChocolate.Data.Extensions/blob/main/ReleaseNotes.md
