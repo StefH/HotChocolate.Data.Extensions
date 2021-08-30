@@ -4250,9 +4250,39 @@ namespace StarWarsGeneratedClient
                 fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("containsIgnoreCase", FormatContainsIgnoreCase(input.ContainsIgnoreCase)));
             }
 
-            if (inputInfo.IsEqualsIgnoreCaseSet)
+            if (inputInfo.IsNcontainsIgnoreCaseSet)
             {
-                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("equalsIgnoreCase", FormatEqualsIgnoreCase(input.EqualsIgnoreCase)));
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ncontainsIgnoreCase", FormatNcontainsIgnoreCase(input.NcontainsIgnoreCase)));
+            }
+
+            if (inputInfo.IsEqIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("eqIgnoreCase", FormatEqIgnoreCase(input.EqIgnoreCase)));
+            }
+
+            if (inputInfo.IsNeqIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("neqIgnoreCase", FormatNeqIgnoreCase(input.NeqIgnoreCase)));
+            }
+
+            if (inputInfo.IsEndsWithIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("endsWithIgnoreCase", FormatEndsWithIgnoreCase(input.EndsWithIgnoreCase)));
+            }
+
+            if (inputInfo.IsNendsWithIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nendsWithIgnoreCase", FormatNendsWithIgnoreCase(input.NendsWithIgnoreCase)));
+            }
+
+            if (inputInfo.IsStartsWithIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("startsWithIgnoreCase", FormatStartsWithIgnoreCase(input.StartsWithIgnoreCase)));
+            }
+
+            if (inputInfo.IsNstartsWithIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nstartsWithIgnoreCase", FormatNstartsWithIgnoreCase(input.NstartsWithIgnoreCase)));
             }
 
             return fields;
@@ -4462,7 +4492,79 @@ namespace StarWarsGeneratedClient
             }
         }
 
-        private global::System.Object? FormatEqualsIgnoreCase(global::System.String? input)
+        private global::System.Object? FormatNcontainsIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatEqIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNeqIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatEndsWithIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNendsWithIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatStartsWithIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNstartsWithIgnoreCase(global::System.String? input)
         {
             if (input is null)
             {
@@ -4515,7 +4617,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq)) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && ((Contains is null && other.Contains is null) || Contains != null && Contains.Equals(other.Contains)) && ((Ncontains is null && other.Ncontains is null) || Ncontains != null && Ncontains.Equals(other.Ncontains)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && ((StartsWith is null && other.StartsWith is null) || StartsWith != null && StartsWith.Equals(other.StartsWith)) && ((NstartsWith is null && other.NstartsWith is null) || NstartsWith != null && NstartsWith.Equals(other.NstartsWith)) && ((EndsWith is null && other.EndsWith is null) || EndsWith != null && EndsWith.Equals(other.EndsWith)) && ((NendsWith is null && other.NendsWith is null) || NendsWith != null && NendsWith.Equals(other.NendsWith)) && ((ContainsIgnoreCase is null && other.ContainsIgnoreCase is null) || ContainsIgnoreCase != null && ContainsIgnoreCase.Equals(other.ContainsIgnoreCase)) && ((EqualsIgnoreCase is null && other.EqualsIgnoreCase is null) || EqualsIgnoreCase != null && EqualsIgnoreCase.Equals(other.EqualsIgnoreCase));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq)) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && ((Contains is null && other.Contains is null) || Contains != null && Contains.Equals(other.Contains)) && ((Ncontains is null && other.Ncontains is null) || Ncontains != null && Ncontains.Equals(other.Ncontains)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && ((StartsWith is null && other.StartsWith is null) || StartsWith != null && StartsWith.Equals(other.StartsWith)) && ((NstartsWith is null && other.NstartsWith is null) || NstartsWith != null && NstartsWith.Equals(other.NstartsWith)) && ((EndsWith is null && other.EndsWith is null) || EndsWith != null && EndsWith.Equals(other.EndsWith)) && ((NendsWith is null && other.NendsWith is null) || NendsWith != null && NendsWith.Equals(other.NendsWith)) && ((ContainsIgnoreCase is null && other.ContainsIgnoreCase is null) || ContainsIgnoreCase != null && ContainsIgnoreCase.Equals(other.ContainsIgnoreCase)) && ((NcontainsIgnoreCase is null && other.NcontainsIgnoreCase is null) || NcontainsIgnoreCase != null && NcontainsIgnoreCase.Equals(other.NcontainsIgnoreCase)) && ((EqIgnoreCase is null && other.EqIgnoreCase is null) || EqIgnoreCase != null && EqIgnoreCase.Equals(other.EqIgnoreCase)) && ((NeqIgnoreCase is null && other.NeqIgnoreCase is null) || NeqIgnoreCase != null && NeqIgnoreCase.Equals(other.NeqIgnoreCase)) && ((EndsWithIgnoreCase is null && other.EndsWithIgnoreCase is null) || EndsWithIgnoreCase != null && EndsWithIgnoreCase.Equals(other.EndsWithIgnoreCase)) && ((NendsWithIgnoreCase is null && other.NendsWithIgnoreCase is null) || NendsWithIgnoreCase != null && NendsWithIgnoreCase.Equals(other.NendsWithIgnoreCase)) && ((StartsWithIgnoreCase is null && other.StartsWithIgnoreCase is null) || StartsWithIgnoreCase != null && StartsWithIgnoreCase.Equals(other.StartsWithIgnoreCase)) && ((NstartsWithIgnoreCase is null && other.NstartsWithIgnoreCase is null) || NstartsWithIgnoreCase != null && NstartsWithIgnoreCase.Equals(other.NstartsWithIgnoreCase));
         }
 
         public override global::System.Int32 GetHashCode()
@@ -4606,9 +4708,39 @@ namespace StarWarsGeneratedClient
                     hash ^= 397 * ContainsIgnoreCase.GetHashCode();
                 }
 
-                if (EqualsIgnoreCase != null)
+                if (NcontainsIgnoreCase != null)
                 {
-                    hash ^= 397 * EqualsIgnoreCase.GetHashCode();
+                    hash ^= 397 * NcontainsIgnoreCase.GetHashCode();
+                }
+
+                if (EqIgnoreCase != null)
+                {
+                    hash ^= 397 * EqIgnoreCase.GetHashCode();
+                }
+
+                if (NeqIgnoreCase != null)
+                {
+                    hash ^= 397 * NeqIgnoreCase.GetHashCode();
+                }
+
+                if (EndsWithIgnoreCase != null)
+                {
+                    hash ^= 397 * EndsWithIgnoreCase.GetHashCode();
+                }
+
+                if (NendsWithIgnoreCase != null)
+                {
+                    hash ^= 397 * NendsWithIgnoreCase.GetHashCode();
+                }
+
+                if (StartsWithIgnoreCase != null)
+                {
+                    hash ^= 397 * StartsWithIgnoreCase.GetHashCode();
+                }
+
+                if (NstartsWithIgnoreCase != null)
+                {
+                    hash ^= 397 * NstartsWithIgnoreCase.GetHashCode();
                 }
 
                 return hash;
@@ -4641,8 +4773,20 @@ namespace StarWarsGeneratedClient
         private global::System.Boolean _set_nendsWith;
         private global::System.String? _value_containsIgnoreCase;
         private global::System.Boolean _set_containsIgnoreCase;
-        private global::System.String? _value_equalsIgnoreCase;
-        private global::System.Boolean _set_equalsIgnoreCase;
+        private global::System.String? _value_ncontainsIgnoreCase;
+        private global::System.Boolean _set_ncontainsIgnoreCase;
+        private global::System.String? _value_eqIgnoreCase;
+        private global::System.Boolean _set_eqIgnoreCase;
+        private global::System.String? _value_neqIgnoreCase;
+        private global::System.Boolean _set_neqIgnoreCase;
+        private global::System.String? _value_endsWithIgnoreCase;
+        private global::System.Boolean _set_endsWithIgnoreCase;
+        private global::System.String? _value_nendsWithIgnoreCase;
+        private global::System.Boolean _set_nendsWithIgnoreCase;
+        private global::System.String? _value_startsWithIgnoreCase;
+        private global::System.Boolean _set_startsWithIgnoreCase;
+        private global::System.String? _value_nstartsWithIgnoreCase;
+        private global::System.Boolean _set_nstartsWithIgnoreCase;
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? And
         {
             get => _value_and;
@@ -4775,7 +4919,6 @@ namespace StarWarsGeneratedClient
         }
 
         global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNendsWithSet => _set_nendsWith;
-        ///<summary>string.Contains with InvariantCultureIgnoreCase</summary>
         public global::System.String? ContainsIgnoreCase
         {
             get => _value_containsIgnoreCase;
@@ -4787,18 +4930,83 @@ namespace StarWarsGeneratedClient
         }
 
         global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsContainsIgnoreCaseSet => _set_containsIgnoreCase;
-        ///<summary>string.Equals with InvariantCultureIgnoreCase</summary>
-        public global::System.String? EqualsIgnoreCase
+        public global::System.String? NcontainsIgnoreCase
         {
-            get => _value_equalsIgnoreCase;
+            get => _value_ncontainsIgnoreCase;
             set
             {
-                _set_equalsIgnoreCase = true;
-                _value_equalsIgnoreCase = value;
+                _set_ncontainsIgnoreCase = true;
+                _value_ncontainsIgnoreCase = value;
             }
         }
 
-        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEqualsIgnoreCaseSet => _set_equalsIgnoreCase;
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNcontainsIgnoreCaseSet => _set_ncontainsIgnoreCase;
+        public global::System.String? EqIgnoreCase
+        {
+            get => _value_eqIgnoreCase;
+            set
+            {
+                _set_eqIgnoreCase = true;
+                _value_eqIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEqIgnoreCaseSet => _set_eqIgnoreCase;
+        public global::System.String? NeqIgnoreCase
+        {
+            get => _value_neqIgnoreCase;
+            set
+            {
+                _set_neqIgnoreCase = true;
+                _value_neqIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNeqIgnoreCaseSet => _set_neqIgnoreCase;
+        public global::System.String? EndsWithIgnoreCase
+        {
+            get => _value_endsWithIgnoreCase;
+            set
+            {
+                _set_endsWithIgnoreCase = true;
+                _value_endsWithIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEndsWithIgnoreCaseSet => _set_endsWithIgnoreCase;
+        public global::System.String? NendsWithIgnoreCase
+        {
+            get => _value_nendsWithIgnoreCase;
+            set
+            {
+                _set_nendsWithIgnoreCase = true;
+                _value_nendsWithIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNendsWithIgnoreCaseSet => _set_nendsWithIgnoreCase;
+        public global::System.String? StartsWithIgnoreCase
+        {
+            get => _value_startsWithIgnoreCase;
+            set
+            {
+                _set_startsWithIgnoreCase = true;
+                _value_startsWithIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsStartsWithIgnoreCaseSet => _set_startsWithIgnoreCase;
+        public global::System.String? NstartsWithIgnoreCase
+        {
+            get => _value_nstartsWithIgnoreCase;
+            set
+            {
+                _set_nstartsWithIgnoreCase = true;
+                _value_nstartsWithIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNstartsWithIgnoreCaseSet => _set_nstartsWithIgnoreCase;
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -8896,7 +9104,19 @@ namespace StarWarsGeneratedClient.State
 
         global::System.Boolean IsContainsIgnoreCaseSet { get; }
 
-        global::System.Boolean IsEqualsIgnoreCaseSet { get; }
+        global::System.Boolean IsNcontainsIgnoreCaseSet { get; }
+
+        global::System.Boolean IsEqIgnoreCaseSet { get; }
+
+        global::System.Boolean IsNeqIgnoreCaseSet { get; }
+
+        global::System.Boolean IsEndsWithIgnoreCaseSet { get; }
+
+        global::System.Boolean IsNendsWithIgnoreCaseSet { get; }
+
+        global::System.Boolean IsStartsWithIgnoreCaseSet { get; }
+
+        global::System.Boolean IsNstartsWithIgnoreCaseSet { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]

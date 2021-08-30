@@ -19,10 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
-    <PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="12.0.0-preview.34" />
-    <PackageReference Include="StrawberryShake.Transport.Http" Version="12.0.0-preview.34" />
+    <PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="12.0.0-rc.0" />
+    <PackageReference Include="StrawberryShake.Transport.Http" Version="12.0.0-rc.0" />
   </ItemGroup>
 
 </Project>
