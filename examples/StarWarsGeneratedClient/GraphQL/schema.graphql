@@ -195,10 +195,14 @@ input StringOperationFilterInput {
   nstartsWith: String
   endsWith: String
   nendsWith: String
-  "string.Contains with InvariantCultureIgnoreCase"
   containsIgnoreCase: String
-  "string.Equals with InvariantCultureIgnoreCase"
-  equalsIgnoreCase: String
+  ncontainsIgnoreCase: String
+  eqIgnoreCase: String
+  neqIgnoreCase: String
+  endsWithIgnoreCase: String
+  nendsWithIgnoreCase: String
+  startsWithIgnoreCase: String
+  nstartsWithIgnoreCase: String
 }
 
 input ListComparableInt32OperationFilterInput {
