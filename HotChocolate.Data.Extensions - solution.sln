@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars.BlazorApp", "examples\StarWars.BlazorApp\StarWars.BlazorApp.csproj", "{BA7447FE-658C-455E-A72A-8713B713F4D5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity", "examples\ContosoUni\ContosoUniversity.csproj", "{6FCE1513-3E13-4962-A8BE-D2FF0D204F78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{BA7447FE-658C-455E-A72A-8713B713F4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7447FE-658C-455E-A72A-8713B713F4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA7447FE-658C-455E-A72A-8713B713F4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FCE1513-3E13-4962-A8BE-D2FF0D204F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCE1513-3E13-4962-A8BE-D2FF0D204F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCE1513-3E13-4962-A8BE-D2FF0D204F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCE1513-3E13-4962-A8BE-D2FF0D204F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +101,7 @@ Global
 		{A9F73919-89AD-46FB-968B-B8B7F327F93D} = {A4AC317F-138E-4955-BD6A-8F7FE37EE52F}
 		{F78CDC9A-900D-4292-8D6E-CA4D1A993845} = {A4AC317F-138E-4955-BD6A-8F7FE37EE52F}
 		{BA7447FE-658C-455E-A72A-8713B713F4D5} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
+		{6FCE1513-3E13-4962-A8BE-D2FF0D204F78} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2928E532-3E28-4E12-BA0D-2366F7CD9B86}

@@ -7,7 +7,7 @@ namespace HotChocolate.Data.Filters
 {
     internal class ExtendedFilterOperationHelper
     {
-        public IDictionary<FO, ExtendedOperationDetail> Operations = new Dictionary<FO, ExtendedOperationDetail>();
+        public IDictionary<FO, OD> Operations = new Dictionary<FO, OD>();
 
         public ExtendedFilterOperationHelper(ExtendedFilterConfiguration cfg)
         {
