@@ -12,7 +12,6 @@ namespace ContosoUniversity.Models
         public string FirstMidName { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        [UseProjection]
         public virtual ICollection<EnrollmentModel> Enrollments { get; set; }
     }
 }

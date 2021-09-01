@@ -35,8 +35,9 @@ namespace ContosoUniversity
 
                     optionsBuilder
                         .LogTo(a => logger.LogDebug(a))
-                        .UseInMemoryDatabase("uni")
+                        //.UseInMemoryDatabase("uni")
                         // .UseSqlite("Data Source=uni.db")
+                        .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=uni")
                         .EnableDetailedErrors()
                         .EnableSensitiveDataLogging()
                         .UseLoggerFactory(loggerFactory);
@@ -114,7 +115,7 @@ namespace ContosoUniversity
             {
                 var course = new Course { Credits = 10, Title = "Object Oriented Programming 1" };
                 context.Courses.Add(course);
-                context.SaveChangesAsync();
+                context.SaveChanges();
 
                 var s1 = new Student { FirstMidName = "Rafael", LastName = "Foo", EnrollmentDate = DateTime.UtcNow };
                 var s2 = new Student { FirstMidName = "Pascal", LastName = "Bar", EnrollmentDate = DateTime.UtcNow };
@@ -122,7 +123,7 @@ namespace ContosoUniversity
                 context.Students.Add(s1);
                 context.Students.Add(s2);
                 context.Students.Add(s3);
-                context.SaveChangesAsync();
+                context.SaveChanges();
 
                 var e1 = new Enrollment
                 {
@@ -142,7 +143,7 @@ namespace ContosoUniversity
                 context.Enrollments.Add(e1);
                 context.Enrollments.Add(e2);
                 context.Enrollments.Add(e3);
-                context.SaveChangesAsync();
+                context.SaveChanges();
             }
         }
     }
