@@ -35,9 +35,9 @@ namespace ContosoUniversity
 
                     optionsBuilder
                         .LogTo(a => logger.LogDebug(a))
-                        //.UseInMemoryDatabase("uni")
-                        // .UseSqlite("Data Source=uni.db")
-                        .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=uni")
+                        //.UseInMemoryDatabase("uni") // "enrollments" = ok
+                        //.UseSqlite("Data Source=uni.db") // "enrollments": []
+                        .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=uni") // "enrollments" = ok
                         .EnableDetailedErrors()
                         .EnableSensitiveDataLogging()
                         .UseLoggerFactory(loggerFactory);
