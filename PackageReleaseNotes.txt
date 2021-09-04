@@ -1,4 +1,4 @@
-# 0.4.0 (01 September 2021)
-- #4  Use string.ToUpper() instead of StringComparison.InvariantCultureIgnoreCase [bug]
+# 0.5.0 (04 September 2021)
+- #5 HotChocolate 12.0.0-rc.2 [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/https://github.com/StefH/HotChocolate.Data.Extensions/blob/main/ReleaseNotes.md
