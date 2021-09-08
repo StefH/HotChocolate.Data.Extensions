@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StarWars.ExtraGraphQL
 {
-    public class MyDiagnosticEventListener : DiagnosticEventListener
+    public class MyDiagnosticEventListener : ExecutionDiagnosticEventListener
     {
         private readonly ILogger<MyDiagnosticEventListener> _logger;
 
@@ -14,7 +14,7 @@ namespace StarWars.ExtraGraphQL
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public override IActivityScope ExecuteRequest(IRequestContext context)
+        public override IDisposable ExecuteRequest(IRequestContext context)
         {
             _logger.LogInformation("ExecuteRequest ---");
 

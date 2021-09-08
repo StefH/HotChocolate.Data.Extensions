@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -12,8 +12,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-rc.2" />
-    <PackageReference Include="HotChocolate.Data" Version="12.0.0-rc.2" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.0-rc.5" />
+    <PackageReference Include="HotChocolate.Data" Version="12.0.0-rc.5" />
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
   </ItemGroup>
 

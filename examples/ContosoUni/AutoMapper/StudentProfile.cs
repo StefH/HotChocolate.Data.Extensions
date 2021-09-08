@@ -8,7 +8,6 @@ namespace ContosoUniversity.AutoMapper
         public StudentProfile()
         {
             CreateMap<Student, StudentModel>();
-                //.ForMember(model => model.Enrollments, o => o.MapFrom(entity => entity.Enrollments));
         }
     }
 }
