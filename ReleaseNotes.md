@@ -1,3 +1,6 @@
+# 0.7.0 (28 September 2021)
+- [#7](https://github.com/StefH/HotChocolate.Data.Extensions/pull/7) - Use HotChocolate 12.0.0 [enhancement] contributed by [StefH](https://github.com/StefH)
+
 # 0.6.0 (08 September 2021)
 - [#6](https://github.com/StefH/HotChocolate.Data.Extensions/pull/6) - rc5 [enhancement] contributed by [StefH](https://github.com/StefH)
 

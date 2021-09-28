@@ -1,4 +1,4 @@
-# 0.6.0 (08 September 2021)
-- #6 rc5 [enhancement]
+# 0.7.0 (28 September 2021)
+- #7 Use HotChocolate 12.0.0 [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/https://github.com/StefH/HotChocolate.Data.Extensions/blob/main/ReleaseNotes.md
