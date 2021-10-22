@@ -8,10 +8,10 @@ Contains some extra String filters like:
 
 ## NuGet packages
 
-| NuGet | Info |
-| - | - |
-| `HotChocolate.Data.Extensions` [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined NuGet
-| `HotChocolate.Data.Filters.Extensions` [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Filters.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Filters.Extensions) | Contains only extensions for Filters
+| Name | NuGet | Info |
+|:- |:- |:- |
+| `HotChocolate.Data.Extensions` | [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined NuGet
+| `HotChocolate.Data.Filters.Extensions` | [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Filters.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Filters.Extensions) | Contains only extensions for Filters
 
 ## Usage "HotChocolate.Data.Filters.Extensions"
 
