@@ -4,6 +4,7 @@ using HotChocolate.Data.Filters.Expressions;
 using HotChocolate.Data.Filters.Models;
 using HotChocolate.Execution.Configuration;
 
+// ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class HotChocolateDataRequestBuilderExtensions
@@ -11,10 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IRequestExecutorBuilder AddExtendedFiltering(this IRequestExecutorBuilder builder, Action<ExtendedFilterConfiguration>? configure = null)
         {
             var configuration = new ExtendedFilterConfiguration();
-            if (configure is not null)
-            {
-                configure(configuration);
-            }
+            configure?.Invoke(configuration);
 
             builder.Services.AddSingleton<ExtendedFilterConfiguration>();
             builder.Services.AddSingleton<ExtendedFilterExpressionHelper>();
