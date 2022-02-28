@@ -1,6 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using HotChocolate;
 using HotChocolate.Data;
+using HotChocolate.Data.Filters.Expressions;
+using HotChocolate.Data.Sorting.Expressions;
+using HotChocolate.Resolvers;
 using HotChocolate.Types;
 using StarWars.Repositories;
 
@@ -56,7 +61,7 @@ namespace StarWars.Characters
             repository.GetCharacters();
 
         /// <summary>
-        /// Gets all character.
+        /// Gets all characters.
         /// </summary>
         /// <param name="repository">The character repository.</param>
         /// <returns>The character.</returns>
@@ -66,6 +71,39 @@ namespace StarWars.Characters
         public IEnumerable<ICharacter> GetCharactersWithPagingFilteringAndSorting(
             [Service] ICharacterRepository repository) =>
             repository.GetCharacters();
+
+        /// <summary>
+        /// Gets all characters.
+        /// https://stackoverflow.com/questions/68459215/hot-chocolate-graphql-interceptor-middleware-to-get-iqueryable-before-data-fet
+        /// </summary>
+        /// <param name="repository">The character repository.</param>
+        /// <param name="context">The ResolverContext</param>
+        /// <returns>The character.</returns>
+        // [UseOffsetPaging(typeof(InterfaceType<ICharacter>), IncludeTotalCount = true)] // , AllowBackwardPagination = true
+        [UseFiltering]
+        [UseSorting]
+        public IEnumerable<ICharacter> GetCharactersWithPagingFilteringAndSortingCustom(
+            IResolverContext context,
+            [Service] ICharacterRepository repository)
+        {
+            var charactersAsQueryable = repository.GetCharacters();
+
+            if (context.LocalContextData.TryGetValue(QueryableFilterProvider.ContextApplyFilteringKey, out var value))
+            {
+                if (value is ApplyFiltering applyFiltering)
+                {
+                    var obj = applyFiltering(context, charactersAsQueryable);
+                    if (obj is IQueryable<ICharacter> queryable)
+                    {
+                        return queryable.Sort(context); // also sort
+                    }
+
+                    throw new Exception("ThrowHelper.Filtering_TypeMissmatch(context, expectedType, obj.GetType()");
+                }
+            }
+
+            throw new Exception("ThrowHelper.Filtering_FilteringWasNotFound(context)");
+        }
 
         /// <summary>
         /// Gets characters by it`s id.
