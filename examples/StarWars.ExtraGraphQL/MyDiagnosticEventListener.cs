@@ -24,7 +24,7 @@ namespace StarWars.ExtraGraphQL
             }
             catch (Exception e)
             {
-                string s = e.Message;
+                _logger.LogError(e, "Error");
                 throw;
             }
         }

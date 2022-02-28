@@ -15,10 +15,10 @@ namespace HotChocolate.Data.Filters.Utils
             string name,
             Type returnType,
             Type? customAttributeType,
-            bool matchParameterInheritence,
+            bool matchParameterInheritance,
             params Type[] parameterTypes)
         {
-            return GetPublicMethodsBySignature(type, name, returnType, customAttributeType, matchParameterInheritence, parameterTypes).Single();
+            return GetPublicMethodsBySignature(type, name, returnType, customAttributeType, matchParameterInheritance, parameterTypes).Single();
         }
 
         public static IEnumerable<MethodInfo> GetPublicMethodsBySignature(
@@ -26,7 +26,7 @@ namespace HotChocolate.Data.Filters.Utils
             string name,
             Type returnType,
             Type? customAttributeType,
-            bool matchParameterInheritence,
+            bool matchParameterInheritance,
             params Type[] parameterTypes)
         {
             return type.GetMethods().Where((methodInfo) =>
@@ -65,7 +65,7 @@ namespace HotChocolate.Data.Filters.Utils
 
                 for (int i = 0; i < parameterTypes.Length; i++)
                 {
-                    if ((parameters[i].ParameterType == parameterTypes[i] || matchParameterInheritence && parameterTypes[i].IsAssignableFrom(parameters[i].ParameterType)) == false)
+                    if ((parameters[i].ParameterType == parameterTypes[i] || matchParameterInheritance && parameterTypes[i].IsAssignableFrom(parameters[i].ParameterType)) == false)
                     {
                         return false;
                     }
