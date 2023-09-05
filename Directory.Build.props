@@ -14,11 +14,11 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
-        <PackageProjectUrl>https://github.com/StefH/HotChocolate.Data.Extensions</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/StefH/GistLens.HotChocolate.Data.Extensions</PackageProjectUrl>
         <PackageIcon>icon_200x200.png</PackageIcon>
 
         <RepositoryType>git</RepositoryType>
-        <RepositoryUrl>https://github.com/StefH/HotChocolate.Data.Extensions</RepositoryUrl>
+        <RepositoryUrl>https://github.com/StefH/GistLens.HotChocolate.Data.Extensions</RepositoryUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Release'">

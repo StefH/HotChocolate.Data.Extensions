@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CDA9510C-CE4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{4AA50138-208E-43B4-8A77-AA4FC0F36000}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.Data.Filters.Extensions", "src\HotChocolate.Data.Filters.Extensions\HotChocolate.Data.Filters.Extensions.csproj", "{26351237-8299-476A-8051-D3C3F3125F45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GistLens.HotChocolate.Data.Filters.Extensions", "src\GistLens.HotChocolate.Data.Filters.Extensions\GistLens.HotChocolate.Data.Filters.Extensions.csproj", "{26351237-8299-476A-8051-D3C3F3125F45}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars.ExtraGraphQL", "examples\StarWars.ExtraGraphQL\StarWars.ExtraGraphQL.csproj", "{D224FBE3-17A2-44F6-801B-AF80DD304414}"
 EndProject
@@ -28,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWarsGeneratedClient", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "graphql-console", "examples\graphql-console\graphql-console.csproj", "{63C70A82-2FA7-4AE7-9393-FE9D5CE6913D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.Data.Extensions", "src\HotChocolate.Data.Extensions\HotChocolate.Data.Extensions.csproj", "{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GistLens.HotChocolate.Data.Extensions", "src\GistLens.HotChocolate.Data.Extensions\GistLens.HotChocolate.Data.Extensions.csproj", "{21E9ECFD-CBCC-4A74-B7F5-4353A94280AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReleaseNotes", "ReleaseNotes", "{A9F73919-89AD-46FB-968B-B8B7F327F93D}"
 	ProjectSection(SolutionItems) = preProject
