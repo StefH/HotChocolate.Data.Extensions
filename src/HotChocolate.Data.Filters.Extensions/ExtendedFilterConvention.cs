@@ -1,53 +1,52 @@
 using HotChocolate.Data.Filters.Expressions;
 using HotChocolate.Types;
 
-namespace HotChocolate.Data.Filters
+namespace HotChocolate.Data.Filters;
+
+internal class ExtendedFilterConvention : FilterConvention
 {
-    internal class ExtendedFilterConvention : FilterConvention
+    private readonly ExtendedFilterOperationHelper _operationHelper;
+
+    public ExtendedFilterConvention(ExtendedFilterOperationHelper operationHelper)
     {
-        private readonly ExtendedFilterOperationHelper _operationHelper;
+        _operationHelper = operationHelper;
+    }
 
-        public ExtendedFilterConvention(ExtendedFilterOperationHelper operationHelper)
+    protected override void Configure(IFilterConventionDescriptor descriptor)
+    {
+        descriptor.AddDefaults();
+
+        // Operation is required:
+        // `Operation with identifier 2000000 has no name defined. Add a name to the filter convention (HotChocolate.Data.Filters.StringOperationFilterInputType)`
+
+        foreach (var operationDetail in _operationHelper.Operations)
         {
-            _operationHelper = operationHelper;
+            descriptor.Operation(operationDetail.Value.Id).Name(operationDetail.Value.Name);
         }
 
-        protected override void Configure(IFilterConventionDescriptor descriptor)
+        descriptor.Configure<StringOperationFilterInputType>(filterInputTypeDescriptor =>
         {
-            descriptor.AddDefaults();
+            // Type<StringType> is required:
+            // `For the operation containsIgnoreCase of type StringOperationFilterInput was no type specified found.`
 
-            // Operation is required:
-            // `Operation with identifier 2000000 has no name defined. Add a name to the filter convention (HotChocolate.Data.Filters.StringOperationFilterInputType)`
-
-            foreach (var operationDetail in _operationHelper.Operations)
+            /*
+             * Generates:
+             * 
+             * """
+             * string.Contains with InvariantCultureIgnoreCase
+             * """
+             * containsIgnoreCase: String
+             */
+            foreach (var operation in _operationHelper.Operations)
             {
-                descriptor.Operation(operationDetail.Value.Id).Name(operationDetail.Value.Name);
+                filterInputTypeDescriptor.Operation(operation.Value.Id).Type<StringType>();
             }
+        });
 
-            descriptor.Configure<StringOperationFilterInputType>(filterInputTypeDescriptor =>
-            {
-                // Type<StringType> is required:
-                // `For the operation containsIgnoreCase of type StringOperationFilterInput was no type specified found.`
+        descriptor.Provider(new QueryableFilterProvider(configure => configure
+            .AddDefaultFieldHandlers()
 
-                /*
-                 * Generates:
-                 * 
-                 * """
-                 * string.Contains with InvariantCultureIgnoreCase
-                 * """
-                 * containsIgnoreCase: String
-                 */
-                foreach (var operation in _operationHelper.Operations)
-                {
-                    filterInputTypeDescriptor.Operation(operation.Value.Id).Type<StringType>();
-                }
-            });
-
-            descriptor.Provider(new QueryableFilterProvider(configure => configure
-                .AddDefaultFieldHandlers()
-
-                .AddFieldHandler<ExtendedQueryableStringOperationHandler>()
-            ));
-        }
+            .AddFieldHandler<ExtendedQueryableStringOperationHandler>()
+        ));
     }
 }

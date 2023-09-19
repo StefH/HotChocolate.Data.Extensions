@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
-        <LangVersion>9</LangVersion>
+        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
 
         <RootNamespace>HotChocolate.Data.Filters</RootNamespace>
         <Title>HotChocolate.Data.Filters.Extensions</Title>
@@ -12,15 +12,12 @@
         <Description>Added String filters 'containsIgnoreCase' and 'eqIgnoreCase'</Description>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Compile Remove="Expressions\QueryableStringContainsInvariantCultureIgnoreCaseHandler.cs" />
-      <Compile Remove="Expressions\QueryableStringEndsWithInvariantCultureIgnoreCaseHandler.cs" />
-      <Compile Remove="Expressions\QueryableStringEqualsInvariantCultureIgnoreCaseEqualsHandler.cs" />
-      <Compile Remove="Expressions\QueryableStringStartsWithInvariantCultureIgnoreCaseHandler.cs" />
+    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
+        <PackageReference Include="HotChocolate.Data" Version="12.0.0" />
     </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="HotChocolate.Data" Version="12.0.0" />
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="HotChocolate.Data" Version="13.0.0" />
     </ItemGroup>
 
     <ItemGroup>

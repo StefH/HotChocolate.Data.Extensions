@@ -5,20 +5,19 @@ using HotChocolate.Data.Filters.Models;
 using HotChocolate.Execution.Configuration;
 
 // ReSharper disable once CheckNamespace
-namespace Microsoft.Extensions.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection;
+
+public static class HotChocolateDataRequestBuilderExtensions
 {
-    public static class HotChocolateDataRequestBuilderExtensions
+    public static IRequestExecutorBuilder AddExtendedFiltering(this IRequestExecutorBuilder builder, Action<ExtendedFilterConfiguration>? configure = null)
     {
-        public static IRequestExecutorBuilder AddExtendedFiltering(this IRequestExecutorBuilder builder, Action<ExtendedFilterConfiguration>? configure = null)
-        {
-            var configuration = new ExtendedFilterConfiguration();
-            configure?.Invoke(configuration);
+        var configuration = new ExtendedFilterConfiguration();
+        configure?.Invoke(configuration);
 
-            builder.Services.AddSingleton<ExtendedFilterConfiguration>();
-            builder.Services.AddSingleton<ExtendedFilterExpressionHelper>();
-            builder.Services.AddSingleton<ExtendedFilterOperationHelper>();
+        builder.Services.AddSingleton<ExtendedFilterConfiguration>();
+        builder.Services.AddSingleton<ExtendedFilterExpressionHelper>();
+        builder.Services.AddSingleton<ExtendedFilterOperationHelper>();
 
-            return builder.AddFiltering<ExtendedFilterConvention>();
-        }
+        return builder.AddFiltering<ExtendedFilterConvention>();
     }
 }
