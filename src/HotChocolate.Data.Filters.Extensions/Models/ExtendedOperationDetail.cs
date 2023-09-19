@@ -1,17 +1,16 @@
 using HotChocolate.Data.Filters.Enums;
 
-namespace HotChocolate.Data.Filters.Models
+namespace HotChocolate.Data.Filters.Models;
+
+internal struct ExtendedOperationDetail
 {
-    internal struct ExtendedOperationDetail
-    {
-        public ExtendedFilterOperation Key { get; set; }
+    public ExtendedFilterOperation Key { get; set; }
 
-        public int Id => (int)Key;
+    public int Id => (int)Key;
 
-        public bool Overwrite { get; set; }
+    public bool Overwrite { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public string Description { get; set; }
-    }
+    public string Description { get; set; }
 }
