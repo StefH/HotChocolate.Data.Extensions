@@ -1,4 +1,4 @@
-# 0.7.0 (28 September 2021)
-- #7 Use HotChocolate 12.0.0 [enhancement]
+# 0.8.0 (19 September 2023)
+- #9 Add .NET 6.0 as framework with a dependency on HotChocolate.Data 13.0.0 [enhancement]
 
 The full release notes can be found here: https://github.com/StefH/https://github.com/StefH/HotChocolate.Data.Extensions/blob/main/ReleaseNotes.md
