@@ -1,17 +1,17 @@
-# HotChocolate.Data.Extensions
+# ![icon](./resources/icon_32x32.png) HotChocolate.Data.Extensions
 
 Contains some extra String filters like:
-- eqIgnoreCase / neqIgnoreCase
-- containsIgnoreCase / ncontainsIgnoreCase
-- endsWithIgnoreCase / nendsWithIgnoreCase
-- startsWithIgnoreCase / nstartsWithIgnoreCase
+- `eqIgnoreCase` / `neqIgnoreCase`
+- `containsIgnoreCase` / `ncontainsIgnoreCase`
+- `endsWithIgnoreCase` / `nendsWithIgnoreCase`
+- `startsWithIgnoreCase` / `nstartsWithIgnoreCase`
 
 ## NuGet packages
 
 | Name | NuGet | Info |
 |:- |:- |:- |
-| `HotChocolate.Data.Extensions` | [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined NuGet
-| `HotChocolate.Data.Filters.Extensions` | [![NuGet Badge](https://buildstats.info/nuget/HotChocolate.Data.Filters.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Filters.Extensions) | Contains only extensions for Filters
+| `HotChocolate.Data.Extensions` | [![NuGet Badge](https://img.shields.io/nuget/v/HotChocolate.Data.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Extensions) | Combined NuGet
+| `HotChocolate.Data.Filters.Extensions` | [![NuGet Badge](https://img.shields.io/nuget/v/HotChocolate.Data.Filters.Extensions)](https://www.nuget.org/packages/HotChocolate.Data.Filters.Extensions) | Contains only extensions for Filters
 
 ## Usage "HotChocolate.Data.Filters.Extensions"
 
@@ -84,3 +84,12 @@ fragment c on Character {
   appearsIn
 }
 ```
+
+
+## Sponsors
+
+[Entity Framework Extensions](https://entityframework-extensions.net/?utm_source=StefH) and [Dapper Plus](https://dapper-plus.net/?utm_source=StefH) are major sponsors and proud to contribute to the development of **HotChocolate.Data.Extensions** and **HotChocolate.Data.Filters.Extensions**.
+
+[![Entity Framework Extensions](https://raw.githubusercontent.com/StefH/resources/main/sponsor/entity-framework-extensions-sponsor.png)](https://entityframework-extensions.net/bulk-insert?utm_source=StefH)
+
+[![Dapper Plus](https://raw.githubusercontent.com/StefH/resources/main/sponsor/dapper-plus-sponsor.png)](https://dapper-plus.net/bulk-insert?utm_source=StefH)

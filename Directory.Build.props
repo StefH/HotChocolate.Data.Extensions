@@ -4,19 +4,18 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Version>0.8.0</Version>
+        <Version>0.8.0.1</Version>
         <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
         <Nullable>enable</Nullable>
 
         <Authors>Stef Heyenrath</Authors>
-        <Copyright>Copyright © 2021 Stef Heyenrath</Copyright>
+        <Copyright>Copyright © Stef Heyenrath</Copyright>
 
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)/../../PackageReleaseNotes.txt"))</PackageReleaseNotes>
         <PackageReadmeFile>PackageReadme.md</PackageReadmeFile>
         <PackageProjectUrl>https://github.com/StefH/HotChocolate.Data.Extensions</PackageProjectUrl>
         <PackageIcon>icon_200x200.png</PackageIcon>
-
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/StefH/HotChocolate.Data.Extensions</RepositoryUrl>
     </PropertyGroup>
